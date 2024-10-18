@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Age Constraint Test",
+    "input_data": [
+      {
+        "name": "Alice",
+        "age": -2
+      },
+      {
+        "name": "Bob",
+        "age": 150
+      }
+    ],
+    "expected_output": [
+      {
+        "name": "Alice",
+        "age": -2
+      },
+      {
+        "name": "Bob",
+        "age": 150
+      }
+    ],
+    "constraints": [
+      lambda
+      x
+      :
+      0
+      <=
+      x
+      [
+        "age"
+      ]
+      <=
+      100
+      for
+      x
+      in
+      x
+      [
+        "input_data"
+      ]
+    ]
+  },
+  {
+    "name": "Name Constraint Test",
+    "input_data": [
+      {
+        "name": "Charlie",
+        "age": 30
+      },
+      {
+        "name": "",
+        "age": 25
+      }
+    ],
+    "expected_output": [
+      {
+        "name": "Charlie",
+        "age": 30
+      },
+      {
+        "name": "",
+        "age": 25
+      }
+    ],
+    "constraints": [
+      lambda
+      x
+      :
+      x
+      [
+        "name"
+      ]
+      .strip()
+      for
+      x
+      in
+      x
+      [
+        "input_data"
+      ]
+    ]
+  }
+  #
+  Add
+  more
+  test
+  cases
+  as
+  needed
+]
